@@ -1,3 +1,49 @@
+/************** imports **************/
 @import "~bootstrap/scss/bootstrap";
 @import "~@fortawesome/fontawesome-free/scss/fontawesome";
 @import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&family=Overlock:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+
+/************** variables **************/
+$dark-gray: #434542;
+$light-gray: #AAAAAA;
+$white: #FFFFFF;
+$light-green: #93C19F;
+$dark-green: #00A877;
+$blue-green: #3A7482;
+
+/************** base styles **************/
+#navbar-logo {
+  width: 60px;
+  height: 60px;
+}
+a {
+  text-decoration:none;
+}
+
+/************** fonts **************/
+
+
+
+/************** mobile styles **************/
+
+footer div{
+  text-align: center;
+  background-color: $light-green;
+}
+footer div i{
+  color: $white;
+  margin: 0 5px;
+}
+footer div p{
+  margin: 0;
+}
+
+/************** large tablets & laptop styles **************/
+@media screen and (min-width: 960px) {
+
+}
