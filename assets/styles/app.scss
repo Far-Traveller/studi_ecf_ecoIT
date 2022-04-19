@@ -14,7 +14,7 @@ $light-gray: #AAAAAA;
 $white: #FFFFFF;
 $light-green: #93C19F;
 $dark-green: #00A877;
-$blue-green: #3A7482;
+$blue: #3A7482;
 
 /************** base styles **************/
 #navbar-logo {
@@ -26,10 +26,43 @@ a {
 }
 
 /************** fonts **************/
-
+h1, h2 {
+  font-family: 'Overlock', sans serif;
+  color: $blue;
+}
+h1 {
+  font-weight: 700;
+  font-size: 2em;
+}
+h2 {
+  font-weight: 400;
+  font-size: 1.6em;
+}
+h3 {
+  font-family: 'Montserrat', sans serif;
+  font-weight: 200;
+  font-size: 1.1em;
+  color: $dark-green;
+}
+p, a {
+  font-family: 'Source Sans Pro', sans serif;
+  font-weight: 400;
+  font-size: 1em;
+  color: $dark-gray;
+}
 
 
 /************** mobile styles **************/
+#welcome {
+  background-image: url(/public/images/welcome-img.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+
 
 footer div{
   text-align: center;
