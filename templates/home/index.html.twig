@@ -5,15 +5,47 @@
 {% block body %}
     <section id="welcome">
         <div class="container welcome-div">
-            <h1>Apprenez l'éco-conception web avec EcoIT</h1>
-            <p class="leading welcome-text">
+            <h1 class="welcome-title">Apprenez l'éco-conception web avec EcoIT</h1>
+            <p class="welcome-text">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                et dolore magna aliqua. Ut enim ad minim veniam.
             </p>
             <a class="btn btn-success" href="#">Toutes nos formations</a>
         </div>
     </section>
-    <section id="last-lessons">
 
+    <section id="last-lessons">
+        <div class="container text-center">
+            <h2>Nos 3 dernières formations</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100 text-center">
+                        <img loading="lazy" src="{{ asset('images/course-img1.jpg') }}" alt="illustration1"/>
+                        <div class="card-body">
+                            <h3 class="card-title">Title</h3>
+                            <p class="card-text">Praesent condimentum leo vitae dolor tristique, sed sodales justo efficitur.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 text-center">
+                        <img loading="lazy" src="{{ asset('images/course-img2.jpg') }}" alt="illustration2"/>
+                        <div class="card-body">
+                            <h3 class="card-title">Title</h3>
+                            <p class="card-text">Fusce turpis diam, ullamcorper ut hendrerit ut, rhoncus dapibus metus.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 text-center">
+                        <img loading="lazy" src="{{ asset('images/course-img3.jpg') }}" alt="illustration3"/>
+                        <div class="card-body">
+                            <h3 class="card-title">Title</h3>
+                            <p class="card-text">Class aptent taciti sociosqu ad litora torquent per conubia nostra.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 {% endblock %}

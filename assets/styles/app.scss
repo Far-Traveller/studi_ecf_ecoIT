@@ -41,7 +41,7 @@ h2 {
 h3 {
   font-family: 'Montserrat', sans serif;
   font-weight: 200;
-  font-size: 1.1em;
+  font-size: 1.3em;
   color: $dark-green;
 }
 p, a {
@@ -61,12 +61,22 @@ p, a {
   padding: 80px 20px;
   text-align: center;
 }
+.welcome-text {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
+#last-lessons {
+  padding: 60px 20px;
+}
+#last-lessons h2 {
+  padding-bottom: 20px;
+}
 
 
 footer div{
   text-align: center;
-  background-color: $light-green;
+  background-color: $dark-green;
 }
 footer div i{
   color: $white;
@@ -77,6 +87,14 @@ footer div p{
 }
 
 /************** large tablets & laptop styles **************/
-@media screen and (min-width: 960px) {
-
+@media screen and (min-width: 992px) {
+  h1 {
+    font-size: 3em;
+  }
+  .welcome-title {
+    margin: 0 200px;
+  }
+  .welcome-text {
+    margin: 50px 200px;
+  }
 }
