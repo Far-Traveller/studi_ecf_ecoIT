@@ -73,7 +73,25 @@ p, a {
   padding-bottom: 20px;
 }
 
+/**** Login page ****/
+.login-container {
+  padding: 10% 15%;
+}
+form h1 {
+  text-align: center;
+}
+form label {
+  padding-top: 25px;
+  padding-bottom: 10px;
+}
+.form-btn {
+  text-align: right;
+}
+form button {
+  margin-top: 30px;
+}
 
+/**** footer ****/
 footer div{
   text-align: center;
   background-color: $dark-green;
@@ -97,4 +115,5 @@ footer div p{
   .welcome-text {
     margin: 50px 200px;
   }
+
 }
