@@ -14,9 +14,9 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
-class RegistrationController extends AbstractController
+class InstructorController extends AbstractController
 {
-    #[Route('/inscription', name: 'app_register_learner')]
+    #[Route('/inscription_instructeur', name: 'app_register_instructor')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, LoginAuthenticator $authenticator, EntityManagerInterface $entityManager): Response
     {
         $user = new User();
@@ -24,8 +24,8 @@ class RegistrationController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // add ROLE_LEARNER
-            $user->setRoles(['ROLE_LEARNER']);
+            // add ROLE_INSTRUCTOR
+            $user->setRoles(['ROLE_INSTRUCTOR']);
 
             // encode the plain password
             $user->setPassword(
@@ -46,8 +46,8 @@ class RegistrationController extends AbstractController
             );
         }
 
-        return $this->render('registration/register.html.twig', [
-            'registrationForm' => $form->createView(),
+        return $this->render('registration/instructor.html.twig', [
+            'instructorForm' => $form->createView(),
         ]);
     }
 }
