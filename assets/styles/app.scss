@@ -44,7 +44,7 @@ h3 {
   font-size: 1.3em;
   color: $dark-green;
 }
-p, a {
+p, a, label {
   font-family: 'Source Sans Pro', sans serif;
   font-weight: 400;
   font-size: 1em;
@@ -73,11 +73,11 @@ p, a {
   padding-bottom: 20px;
 }
 
-/**** Login page ****/
-.login-container {
+/**** Form pages ****/
+.form-container {
   padding: 10% 15%;
 }
-form h1 {
+.form-title {
   text-align: center;
 }
 form label {
@@ -89,6 +89,9 @@ form label {
 }
 form button {
   margin-top: 30px;
+}
+.group-to-hide {
+  display: none;
 }
 
 /**** footer ****/
