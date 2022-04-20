@@ -4,13 +4,21 @@
 
 {% block body %}
    <div class="container">
-       <h1>Nos formations</h1>
-    {% for formation in formations %}
-        <div class="col-md-4 formation-list">
-            <a href="" class="btn-formation float-end m-2">Suivre cette formation</a>
-            <p>{{ formation.title }}</p>
-            <p>{{ formation.description }}</p>
-        </div>
-    {% endfor %}
+       <h1 class="title-h1">Nos formations</h1>
+       <div class="row row-cols-1 row-cols-md-3 g-4">
+           {%  for formation in formations %}
+               <div class="col formation-col">
+                   <div class="card h-100 text-center">
+                       <img loading="lazy" src="{{ asset('images/course-img1.jpg') }}" alt="illustration1"/>
+                       <div class="card-body">
+                           <a href="" class="h3 card-title">
+                               {{ formation.title }}
+                           </a>
+                           <p class="card-text">{{ formation.description }}</p>
+                       </div>
+                   </div>
+               </div>
+           {% endfor %}
+       </div>
    </div>
 {% endblock %}

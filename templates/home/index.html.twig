@@ -10,7 +10,7 @@
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
                 et dolore magna aliqua. Ut enim ad minim veniam.
             </p>
-            <a class="btn btn-success" href="#">Toutes nos formations</a>
+            <a class="btn btn-success" href="{{ path('app_formation') }}">Toutes nos formations</a>
         </div>
     </section>
 
@@ -23,7 +23,9 @@
                     <div class="card h-100 text-center">
                         <img loading="lazy" src="{{ asset('images/course-img1.jpg') }}" alt="illustration1"/>
                         <div class="card-body">
-                            <h3 class="card-title">{{ formation.title }}</h3>
+                            <a href="{{ path('app_formation_show', {id: formation.id}) }}" class="h3 card-title">
+                                {{ formation.title }}
+                            </a>
                             <p class="card-text">{{ formation.description }}</p>
                         </div>
                     </div>

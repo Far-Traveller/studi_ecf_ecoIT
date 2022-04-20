@@ -16,6 +16,7 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class FormationRepository extends ServiceEntityRepository
 {
+
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Formation::class);
@@ -44,6 +45,7 @@ class FormationRepository extends ServiceEntityRepository
             $this->_em->flush();
         }
     }
+
     /**
      * @return Formation[]
      */
