@@ -19,7 +19,7 @@ class Lesson
     #[ORM\Column(type: 'string', length: 255)]
     private $video;
 
-    #[ORM\Column(type: 'string')]
+    #[ORM\Column(type: 'text')]
     private $text;
 
     #[ORM\Column(type: 'string', length: 255)]

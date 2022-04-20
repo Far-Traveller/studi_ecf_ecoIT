@@ -18,33 +18,17 @@
         <div class="container text-center">
             <h2>Nos 3 dernières formations</h2>
             <div class="row row-cols-1 row-cols-md-3 g-4">
+                {%  for formation in latest %}
                 <div class="col">
                     <div class="card h-100 text-center">
                         <img loading="lazy" src="{{ asset('images/course-img1.jpg') }}" alt="illustration1"/>
                         <div class="card-body">
-                            <h3 class="card-title">Title</h3>
-                            <p class="card-text">Praesent condimentum leo vitae dolor tristique, sed sodales justo efficitur.</p>
+                            <h3 class="card-title">{{ formation.title }}</h3>
+                            <p class="card-text">{{ formation.description }}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card h-100 text-center">
-                        <img loading="lazy" src="{{ asset('images/course-img2.jpg') }}" alt="illustration2"/>
-                        <div class="card-body">
-                            <h3 class="card-title">Title</h3>
-                            <p class="card-text">Fusce turpis diam, ullamcorper ut hendrerit ut, rhoncus dapibus metus.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 text-center">
-                        <img loading="lazy" src="{{ asset('images/course-img3.jpg') }}" alt="illustration3"/>
-                        <div class="card-body">
-                            <h3 class="card-title">Title</h3>
-                            <p class="card-text">Class aptent taciti sociosqu ad litora torquent per conubia nostra.</p>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
