@@ -4,8 +4,20 @@
 
 {% block body %}
     <div class="container">
-        <h1>{{ formation.title}}</h1>
-        {{ formation.id }}
+        <h1 class="title-h1">{{ formation.title}}</h1>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {%  for section in sections %}
+                <div class="col formation-col">
+                    <div class="card h-100 text-center">
+                        <div class="card-body m-auto">
+                            <a href="" class="h3 card-title">
+                                {{ section.title }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 
 {% endblock %}

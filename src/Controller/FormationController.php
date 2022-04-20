@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Formation;
+use App\Entity\Lesson;
+use App\Entity\Section;
 use App\Repository\FormationRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -34,12 +36,10 @@ class FormationController extends AbstractController
     #[Route('/formations/{id}', name: 'app_formation_show')]
     public function show(Formation $formation): Response
     {
-
         return $this->render('formation/show.html.twig', [
             'controller_name' => 'FormationController',
-            'formation' => $formation
+            'formation' => $formation,
+            'sections' => $formation->getSection()
         ]);
     }
-
-
 }

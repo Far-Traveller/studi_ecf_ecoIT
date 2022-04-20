@@ -42,7 +42,7 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
-        # - { path: ^/, roles: ROLE_LEARNER }
+        - { path: ^/formations/[0-9], roles: ROLE_USER }
 
 when@test:
     security:
