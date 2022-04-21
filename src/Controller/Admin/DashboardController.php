@@ -23,7 +23,7 @@ class DashboardController extends AbstractDashboardController
 
         $adminUrlGenerator = $this->container->get(AdminUrlGenerator::class);
         $administratorPath = $adminUrlGenerator->setController(UserCrudController::class)->generateUrl();
-        $instructorPath = $adminUrlGenerator->setController(UserCrudController::class)->generateUrl();
+        $instructorPath = $adminUrlGenerator->setController(FormationCrudController::class)->generateUrl();
 
         if (!$this->getUser()) {
             return $this->redirectToRoute('app_homepage');
