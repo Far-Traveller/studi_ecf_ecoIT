@@ -3,21 +3,36 @@
 {% block title %}{{ formation.title }}{% endblock %}
 
 {% block body %}
-    <div class="container">
-        <h1 class="title-h1">{{ formation.title}}</h1>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            {%  for section in sections %}
-                <div class="col formation-col">
-                    <div class="card h-100 text-center">
-                        <div class="card-body m-auto">
-                            <a href="" class="h3 card-title">
-                                {{ section.title }}
-                            </a>
-                        </div>
-                    </div>
+    <div class="formation-container">
+        <div class="row">
+            <div id="result"></div>
+            <div id="list-div">
+                <button class="btn btn-success list-btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFormation" aria-controls="collapseFormation" aria-expanded="false" aria-label="Toggle">
+                    Liste leçons
+                </button>
+                <div class="collapse" id="collapseFormation">
+                    <h1 class="title-h1 formation-h1">{{ formation.title}}</h1>
+                    {% for section in sections %}
+                        <h3 class="formation-h3">{{ section.title }}</h3>
+                        <ul>
+                            {% for lesson in lessons %}
+                                <li>
+                                    <a href="#">{{ lesson.title }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endfor %}
                 </div>
-            {% endfor %}
+            </div>
+            <div id="lesson-div">
+                <h2 class="lesson-h2">Titre leçon</h2>
+                <div class="lesson-video">Vidéo</div>
+                <p class="lesson-text">Petit texte</p>
+            </div>
         </div>
     </div>
+{% endblock %}
 
+{% block javascripts %}
+    {{ encore_entry_script_tags('formation') }}
 {% endblock %}

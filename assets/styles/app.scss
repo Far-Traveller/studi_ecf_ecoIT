@@ -24,6 +24,10 @@ $blue: #3A7482;
 a {
   text-decoration:none;
 }
+ul {
+  list-style-type: none;
+  padding-left: 10px;
+}
 
 /************** fonts **************/
 h1, h2 {
@@ -102,6 +106,34 @@ form button {
 .formation-col {
   margin-bottom: 20px;
 }
+.formation-container {
+  margin: 20px 35px
+}
+.formation-h1 {
+  text-align: left;
+  font-size: 1.4em;
+}
+#list-div {
+  padding-bottom: 20px;
+}
+#collapseFormation {
+  border-bottom: 2px solid $dark-green;
+  border-right: none;
+}
+.formation-h3 {
+  font-size: 1em;
+}
+#lesson-div {
+  text-align: center;
+  padding: 20px;
+}
+.lesson-h2 {
+  padding-bottom: 20px;
+}
+.lesson-text {
+  padding-top: 20px;
+  text-align: left;
+}
 
 /**** footer ****/
 footer div{
@@ -117,7 +149,7 @@ footer div p{
 }
 
 /************** large tablets & laptop styles **************/
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   h1 {
     font-size: 3em;
   }
@@ -128,4 +160,9 @@ footer div p{
     margin: 50px 200px;
   }
 
+/**** Formation pages ****/
+  #collapseFormation {
+    border-bottom: none;
+    border-right: 2px solid $dark-green;
+  }
 }
