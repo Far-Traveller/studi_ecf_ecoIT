@@ -13,12 +13,14 @@ class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-         $formation = new Formation();
-        $formation->setDescription('fnrbjkefln,lz,ezlv');
-        $formation->setTitle('edfredfded');
-        $formation->getSlug();
+        for ($i = 0; $i < 20; $i++) {
+            $formation = new Formation();
+            $formation->setTitle('formation '.$i);
+            $formation->setDescription('Lorem ipsumimous');
+            $formation->setSlug('formation'.$i);
+            $manager->persist($formation);
+        }
 
-         $manager->persist($formation);
         $manager->flush();
     }
 }
