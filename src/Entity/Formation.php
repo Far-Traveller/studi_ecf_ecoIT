@@ -6,11 +6,9 @@ use App\Repository\FormationRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints\DateTime;
-use Vich\UploaderBundle\Mapping\Annotation as Vich;
+
 
 #[ORM\Entity(repositoryClass: FormationRepository::class)]
-#[Vich\Uploadable]
 class Formation
 {
     #[ORM\Id]
@@ -30,19 +28,10 @@ class Formation
     #[ORM\Column(type: 'string', length: 255)]
     private $slug;
 
-    #[ORM\Column(type: 'string', length: 255)]
-    private $thumbnail;
-
-    #[Vich\UploadableField(mapping: 'thumbnails', fileNameProperty: 'thumbnail')]
-    private $thumbnailFile;
-
-    #[ORM\Column(type: 'datetime', nullable: true)]
-    private $updatedAt;
-
     public function __construct()
     {
         $this->Section = new ArrayCollection();
-        $this->updatedAt = new \DateTime();
+//        $this->updatedAt = new \DateTime();
     }
 
     public function getId(): ?int
@@ -119,54 +108,6 @@ class Formation
     public function __toString()
     {
         return $this->title;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getThumbnailFile()
-    {
-        return $this->thumbnailFile;
-    }
-
-    /**
-     * @param mixed $thumbnailFile
-     */
-    public function setThumbnailFile($thumbnailFile): void
-    {
-        $this->thumbnailFile = $thumbnailFile;
-
-        if ($thumbnailFile) {
-            $this->updatedAt = new \DateTime();
-        }
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getThumbnail()
-    {
-        return $this->thumbnail;
-    }
-
-    /**
-     * @param mixed $thumbnail
-     */
-    public function setThumbnail($thumbnail): void
-    {
-        $this->thumbnail = $thumbnail;
-    }
-
-    public function getUpdatedAt(): DateTime
-    {
-        return $this->updatedAt;
-    }
-
-    public function setUpdatedAt(\DateTimeInterface $updatedAt): self
-    {
-        $this->updatedAt = $updatedAt;
-
-        return $this;
     }
 
 }
