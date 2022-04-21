@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription Instructeur{% endblock %}
+
+{% block body %}
+    <div class="container form-container">
+        {{ form_start(instructorForm) }}
+            <h1 class="mb-3 form-title">Inscription Instructeur</h1>
+
+            <div class="form-group group-to-hide">
+                {{ form_row(instructorForm.pseudo, {
+                    label: 'Pseudo',
+                    attr: {'class': 'form-control group-to-hide'}
+                }) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(instructorForm.firstname, {
+                    label: 'Prénom',
+                    attr: {'class': 'form-control'}
+                }) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(instructorForm.lastname, {
+                    label: 'Nom',
+                    attr: {'class': 'form-control'}
+                }) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(instructorForm.email, {
+                    label: 'Adresse e-mail',
+                    attr: {'class': 'form-control'}
+                }) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(instructorForm.plainPassword, {
+                    label: 'Mot de passe',
+                    attr: {'class': 'form-control'}
+                }) }}
+            </div>
+
+            <div class="form-btn">
+                <button class="btn btn-success" type="submit">
+                    Inscription
+                </button>
+            </div>
+        {{ form_end(instructorForm) }}
+    </div>
+{% endblock %}

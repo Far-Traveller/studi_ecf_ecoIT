@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ formation.title }}{% endblock %}
+
+{% block body %}
+    <div class="formation-container">
+        <div class="row">
+            <div id="result"></div>
+            <div id="list-div">
+                <button class="btn btn-success list-btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFormation" aria-controls="collapseFormation" aria-expanded="false" aria-label="Toggle">
+                    Liste leçons
+                </button>
+                <div class="collapse" id="collapseFormation">
+                    <h1 class="title-h1 formation-h1">{{ formation.title}}</h1>
+                    {% for section in sections %}
+                        <h3 class="formation-h3">{{ section.title }}</h3>
+                        <ul>
+                            {% for lesson in lessons %}
+                                {% if lesson.section.id == section.id %}
+                                    <li>
+                                        {%  if is_granted('ROLE_LEARNER') %}
+                                            {% if lesson in done_lessons %}
+                                                <a class="check-lesson-done icon-done-{{ lesson.id }}" href="{{ path('app_lesson_done', {slug: formation.slug, id_section: section.id, id: lesson.id}) }}">
+                                                    <i class="fa-solid fa-square-check"></i>
+                                                </a>
+                                            {% else %}
+                                                <a class="check-lesson-done" href="{{ path('app_lesson_done', {slug: formation.slug, id_section: section.id, id: lesson.id}) }}">
+                                                    <i class="fa-regular fa-square"></i>
+                                                </a>
+                                            {% endif %}
+                                        {% endif %}
+                                        <a class="show_lesson"
+                                           href="{{ path('app_lesson_show', {slug: formation.slug, id_section: section.id, id: lesson.id}) }}">
+                                            {{ lesson.title }}
+                                        </a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div id="lesson-div">
+                <h2 id="lesson-h2">Sélectionnez une leçon pour commençer (ou continuer) à apprendre <i class="fa-regular fa-face-smile-wink"></i></h2>
+                <a href="" id="lesson-video"></a>
+                <p id="lesson-text"></p>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('formation') }}
+{% endblock %}

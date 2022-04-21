@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription Apprenant{% endblock %}
+
+{% block body %}
+    <div class="container form-container">
+        {{ form_start(registrationForm) }}
+            <h1 class="mb-3 form-title">Inscription Apprenant</h1>
+
+            <div class="form-group">
+                {{ form_row(registrationForm.pseudo, {
+                    label: 'Pseudo',
+                    attr: {'class': 'form-control'}
+                }) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(registrationForm.firstname, {
+                    label: 'Prénom',
+                    attr: {'class': 'form-control'}
+                }) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(registrationForm.lastname, {
+                    label: 'Nom',
+                    attr: {'class': 'form-control'}
+                }) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(registrationForm.email, {
+                    label: 'Adresse e-mail',
+                    attr: {'class': 'form-control'}
+                }) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(registrationForm.plainPassword, {
+                    label: 'Mot de passe',
+                    attr: {'class': 'form-control'}
+                }) }}
+            </div>
+
+            <div class="form-btn">
+                <button class="btn btn-success" type="submit">
+                    Inscription
+                </button>
+            </div>
+        {{ form_end(registrationForm) }}
+    </div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+    <section id="welcome">
+        <div class="container welcome-div">
+            <h1 class="welcome-title">Apprenez l'éco-conception web avec EcoIT</h1>
+            <p class="welcome-text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                et dolore magna aliqua. Ut enim ad minim veniam.
+            </p>
+            <a class="btn btn-success" href="{{ path('app_formation') }}">Toutes nos formations</a>
+        </div>
+    </section>
+
+    <section id="last-lessons">
+        <div class="container text-center">
+            <h2>Nos 3 dernières formations</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                {%  for formation in latest %}
+                <div class="col">
+                    <div class="card h-100 text-center">
+                        <img loading="lazy" src="{{ asset('images/course-img1.jpg') }}" alt="illustration1"/>
+                        <div class="card-body">
+                            <a href="{{ path('app_formation_show', {slug: formation.slug}) }}" class="h3 card-title">
+                                {{ formation.title }}
+                            </a>
+                            <p class="card-text">{{ formation.description }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

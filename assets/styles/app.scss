@@ -1,0 +1,191 @@
+/************** imports **************/
+@import "~bootstrap/scss/bootstrap";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&family=Overlock:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+
+/************** variables **************/
+$dark-gray: #434542;
+$light-gray: #AAAAAA;
+$white: #FFFFFF;
+$light-green: #93C19F;
+$dark-green: #00A877;
+$blue: #3A7482;
+
+/************** base styles **************/
+#navbar-logo {
+  width: 60px;
+  height: 60px;
+}
+a {
+  text-decoration:none;
+}
+ul {
+  list-style-type: none;
+  padding-left: 10px;
+}
+
+/************** fonts **************/
+h1, h2 {
+  font-family: 'Overlock', sans serif;
+  color: $blue;
+}
+h1 {
+  font-weight: 700;
+  font-size: 2em;
+}
+h2 {
+  font-weight: 400;
+  font-size: 1.6em;
+}
+h3 {
+  font-family: 'Montserrat', sans serif;
+  font-weight: 200;
+  font-size: 1.3em;
+  color: $dark-green;
+}
+p, a, label, ul {
+  font-family: 'Source Sans Pro', sans serif;
+  font-weight: 400;
+  font-size: 1em;
+  color: $dark-gray;
+}
+
+
+/************** mobile styles **************/
+#welcome {
+  background-image: url(/public/images/welcome-img.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 80px 20px;
+  text-align: center;
+}
+.welcome-text {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#last-lessons {
+  padding: 60px 20px;
+}
+#last-lessons h2 {
+  padding-bottom: 20px;
+}
+
+/**** Form pages ****/
+.form-container {
+  padding: 10% 15%;
+}
+.form-title {
+  text-align: center;
+}
+form label {
+  padding-top: 25px;
+  padding-bottom: 10px;
+}
+.form-btn {
+  text-align: right;
+}
+form button {
+  margin-top: 30px;
+}
+.group-to-hide {
+  display: none;
+}
+
+/**** Formation pages ****/
+.title-h1 {
+  text-align: center;
+  padding: 20px 0;
+}
+.formation-col {
+  margin-bottom: 20px;
+}
+.formation-container {
+  margin: 20px 35px
+}
+.formation-h1 {
+  text-align: left;
+  font-size: 1.4em;
+}
+#list-div {
+  padding-bottom: 20px;
+}
+#collapseFormation {
+  border-bottom: 2px solid $dark-green;
+  border-right: none;
+}
+.formation-h3 {
+  font-size: 1em;
+}
+#lesson-div {
+  text-align: center;
+  padding: 20px;
+}
+#lesson-h2 {
+  padding-bottom: 20px;
+}
+#lesson-text {
+  padding-top: 20px;
+  text-align: left;
+}
+.fa-square-check {
+  color: $dark-green;
+}
+.fa-square {
+  color: $light-gray;
+}
+
+/**** Profile Learner ****/
+.profile-info, .profile-prog {
+  padding: 15px 20px;
+}
+.profile-info p {
+  padding-left: 25px;
+}
+
+/**** footer ****/
+footer div{
+  text-align: center;
+  background-color: $light-green;
+}
+footer div i{
+  color: $white;
+  margin: 0 5px;
+}
+footer div p{
+  margin: 0;
+}
+
+/************** large tablets & laptop styles **************/
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 3em;
+  }
+  .welcome-title {
+    margin: 0 20%;
+  }
+  .welcome-text {
+    margin: 50px 200px;
+  }
+
+  /**** Formation pages ****/
+  #collapseFormation {
+    border-bottom: none;
+    border-right: 2px solid $dark-green;
+  }
+
+  /**** Profile Learner ****/
+  .profile-info, .profile-prog {
+    padding: 20px 20%;
+  }
+  .profile-info p {
+    padding-left: 25px;
+  }
+
+}
