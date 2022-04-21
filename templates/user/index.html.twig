@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon profil{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="title-h1">Mon profil</h1>
+        <div class="profile-info">
+            <h3>Mes informations</h3>
+            <p>Nom : {{ app.user.lastname }}</p>
+            <p>Prénom : {{ app.user.firstname }}</p>
+            <p>Pseudo : {{ app.user.pseudo }}</p>
+            <p>Adresse-email : {{ app.user.email }}</p>
+        </div>
+
+        <div class="profile-prog">
+            <h3>Ma progression</h3>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
