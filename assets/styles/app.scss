@@ -48,7 +48,7 @@ h3 {
   font-size: 1.3em;
   color: $dark-green;
 }
-p, a, label {
+p, a, label, ul {
   font-family: 'Source Sans Pro', sans serif;
   font-weight: 400;
   font-size: 1em;
@@ -134,6 +134,12 @@ form button {
   padding-top: 20px;
   text-align: left;
 }
+.fa-square-check {
+  color: $dark-green;
+}
+.fa-square {
+  color: $light-gray;
+}
 
 /**** Profile Learner ****/
 .profile-info, .profile-prog {
@@ -146,7 +152,7 @@ form button {
 /**** footer ****/
 footer div{
   text-align: center;
-  background-color: $dark-green;
+  background-color: $light-green;
 }
 footer div i{
   color: $white;

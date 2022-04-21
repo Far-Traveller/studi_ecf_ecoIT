@@ -37,9 +37,23 @@ function showLesson(event) {
         });
 }
 
-let show = document.querySelectorAll('.show_lesson');
-show.forEach(function (url) {
+let btnShow = document.querySelectorAll('.show_lesson');
+btnShow.forEach(function (url) {
     url.addEventListener('click', showLesson);
 });
 
+function lessonDone(event) {
+    event.preventDefault();
 
+    const url = this.href;
+
+    fetch(url)
+        .then(response => response.json());
+
+    setTimeout(function () { location.reload(); }, 100);
+}
+
+let btnDone = document.querySelectorAll('.check-lesson-done');
+btnDone.forEach(function (url) {
+    url.addEventListener('click', lessonDone);
+});
