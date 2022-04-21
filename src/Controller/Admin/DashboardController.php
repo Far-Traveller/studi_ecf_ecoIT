@@ -3,6 +3,8 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Formation;
+use App\Entity\Lesson;
+use App\Entity\Section;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -16,9 +18,10 @@ class DashboardController extends AbstractDashboardController
     #[Route('/admin', name: 'admin')]
     public function index(): Response
     {
+        // SECURITY, ROL_INSTR
+
          $adminUrlGenerator = $this->container->get(AdminUrlGenerator::class);
          return $this->redirect($adminUrlGenerator->setController(UserCrudController::class)->generateUrl());
-
     }
 
     public function configureDashboard(): Dashboard
@@ -30,9 +33,11 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::section('Users');
-        yield MenuItem::linkToCrud('Users', 'fas fa-user', User::class);
-//        yield MenuItem::section('Formations');
-//        yield MenuItem::linkToCrud('Formations', 'fas fa-user', Formation::class);
+        yield MenuItem::section('Utilisateurs');
+        yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-user', User::class);
+        yield MenuItem::section('Formations');
+        yield MenuItem::linkToCrud('Formations', 'fas fa-user', Formation::class);
+        yield MenuItem::linkToCrud('Section', 'fas fa-user', Section::class);
+        yield MenuItem::linkToCrud('Lessons', 'fas fa-user', Lesson::class);
     }
 }
