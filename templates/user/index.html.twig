@@ -14,10 +14,15 @@
         </div>
 
         <div class="profile-prog">
-            <h3>Ma progression</h3>
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-            </div>
+            <h3>Mes leçons terminées</h3>
+                <ul class="list-group list-group-flush">
+                    {% for lesson in done_lessons %}
+                        <li class="list-group-item">{{ lesson.title }}</li>
+                    {% endfor %}
+                </ul>
+
+            <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+
         </div>
     </div>
 {% endblock %}

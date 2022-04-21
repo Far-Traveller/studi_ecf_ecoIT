@@ -29,7 +29,7 @@
                             <a class="nav-link active" aria-current="page" href="{{ path('app_homepage') }}">Accueil</a>
                             <a class="nav-link" href="{{ path('app_formation') }}">Nos formations</a>
                             {%  if is_granted('IS_AUTHENTICATED_FULLY') %}
-                                <a class="nav-link" href="{{ path('app_learner_profile') }}">Mon profil</a>
+                                <a class="nav-link" href="{{ path('app_learner_profile', {id: app.user.id}) }}">Mon profil</a>
                                 <a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
                             {% else %}
                                 <a class="nav-link" href="{{ path('app_login') }}">Connexion</a>

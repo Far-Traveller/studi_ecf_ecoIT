@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -34,6 +36,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: 'string', length: 255)]
     private $lastname;
+
+    #[ORM\ManyToMany(targetEntity: Lesson::class)]
+    private $DoneLessons;
+
+    public function __construct()
+    {
+        $this->DoneLessons = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -137,6 +147,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setLastname(string $lastname): self
     {
         $this->lastname = $lastname;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Lesson>
+     */
+    public function getDoneLessons(): Collection
+    {
+        return $this->DoneLessons;
+    }
+
+    public function addDoneLesson(Lesson $doneLesson): self
+    {
+        if (!$this->DoneLessons->contains($doneLesson)) {
+            $this->DoneLessons[] = $doneLesson;
+        }
+
+        return $this;
+    }
+
+    public function removeDoneLesson(Lesson $doneLesson): self
+    {
+        $this->DoneLessons->removeElement($doneLesson);
 
         return $this;
     }
