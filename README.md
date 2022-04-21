@@ -43,3 +43,5 @@ $ php bin/console server:start
 
 ## Livrables
 Les différents livrables de ce projet se trouvent dans le dossier "Livrables".
+
+Le site est en ligne ici : https://eco-it-far--traveller.herokuapp.com/
