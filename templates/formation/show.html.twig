@@ -18,14 +18,16 @@
                             {% for lesson in lessons %}
                                 {% if lesson.section.id == section.id %}
                                     <li>
-                                        {% if lesson in done_lessons %}
-                                            <a class="check-lesson-done icon-done-{{ lesson.id }}" href="{{ path('app_lesson_done', {slug: formation.slug, id_section: section.id, id: lesson.id}) }}">
-                                                <i class="fa-solid fa-square-check"></i>
-                                            </a>
-                                        {% else %}
-                                            <a class="check-lesson-done" href="{{ path('app_lesson_done', {slug: formation.slug, id_section: section.id, id: lesson.id}) }}">
-                                                <i class="fa-regular fa-square"></i>
-                                            </a>
+                                        {%  if is_granted('ROLE_LEARNER') %}
+                                            {% if lesson in done_lessons %}
+                                                <a class="check-lesson-done icon-done-{{ lesson.id }}" href="{{ path('app_lesson_done', {slug: formation.slug, id_section: section.id, id: lesson.id}) }}">
+                                                    <i class="fa-solid fa-square-check"></i>
+                                                </a>
+                                            {% else %}
+                                                <a class="check-lesson-done" href="{{ path('app_lesson_done', {slug: formation.slug, id_section: section.id, id: lesson.id}) }}">
+                                                    <i class="fa-regular fa-square"></i>
+                                                </a>
+                                            {% endif %}
                                         {% endif %}
                                         <a class="show_lesson"
                                            href="{{ path('app_lesson_show', {slug: formation.slug, id_section: section.id, id: lesson.id}) }}">
