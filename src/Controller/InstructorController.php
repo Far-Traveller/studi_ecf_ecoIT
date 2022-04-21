@@ -25,7 +25,7 @@ class InstructorController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             // add ROLE_INSTRUCTOR
-            $user->setRoles(['ROLE_INSTRUCTOR']);
+            //$user->setRoles(['ROLE_INSTRUCTOR']);
 
             // encode the plain password
             $user->setPassword(

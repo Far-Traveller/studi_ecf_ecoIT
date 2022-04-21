@@ -33,6 +33,7 @@ function showLesson(event) {
         .then(function(result) {
             lessonTitle.innerText = result.title;
             lessonVideo.innerText = result.video;
+            lessonVideo.href = result.video;
             lessonText.innerText = result.text;
         });
 }

@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="EcoIt est une plateforme d'apprentissage de l'Eco-Conception Web!">
+        <meta name="keywords" content="Eco-Conception, Apprentissage, Instructeur, Ecologie">
         <title>EcoIT - {% block title %}{% endblock %}</title>
         <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}" />
         {% block stylesheets %}
@@ -28,8 +31,10 @@
                         <div class="navbar-nav ms-auto">
                             <a class="nav-link" aria-current="page" href="{{ path('app_homepage') }}">Accueil</a>
                             <a class="nav-link" href="{{ path('app_formation') }}">Nos formations</a>
-                            {%  if is_granted('IS_AUTHENTICATED_FULLY') %}
+                            {%  if is_granted('ROLE_LEARNER') %}
                                 <a class="nav-link" href="{{ path('app_learner_profile', {id: app.user.id}) }}">Mon profil</a>
+                            {% endif %}
+                            {%  if is_granted('IS_AUTHENTICATED_FULLY') %}
                                 <a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
                             {% else %}
                                 <a class="nav-link" href="{{ path('app_login') }}">Connexion</a>

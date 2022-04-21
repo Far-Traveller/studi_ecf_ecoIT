@@ -6,7 +6,7 @@ use App\Repository\FormationRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Cocur\Slugify\Slugify;
+
 
 #[ORM\Entity(repositoryClass: FormationRepository::class)]
 class Formation
@@ -31,6 +31,7 @@ class Formation
     public function __construct()
     {
         $this->Section = new ArrayCollection();
+//        $this->updatedAt = new \DateTime();
     }
 
     public function getId(): ?int
@@ -102,6 +103,11 @@ class Formation
         $this->slug = $slug;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->title;
     }
 
 }

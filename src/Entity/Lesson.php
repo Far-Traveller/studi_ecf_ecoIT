@@ -22,9 +22,6 @@ class Lesson
     #[ORM\Column(type: 'text')]
     private $text;
 
-    #[ORM\Column(type: 'string', length: 255)]
-    private $resources;
-
     #[ORM\ManyToOne(targetEntity: Section::class, inversedBy: 'Lesson')]
     #[ORM\JoinColumn(nullable: false)]
     private $section;
@@ -66,18 +63,6 @@ class Lesson
     public function setText(string $text): self
     {
         $this->text = $text;
-
-        return $this;
-    }
-
-    public function getResources(): ?string
-    {
-        return $this->resources;
-    }
-
-    public function setResources(string $resources): self
-    {
-        $this->resources = $resources;
 
         return $this;
     }
