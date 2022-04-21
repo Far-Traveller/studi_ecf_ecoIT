@@ -25,8 +25,8 @@ class FormationCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
 
-        $imageFile = Imagefield::new('thumbnailFile')->setFormType(VichImageType::class);
-        $image = ImageField::new('thumbnail')->setBasePath('/images/thumbnails');
+//        $imageFile = Imagefield::new('thumbnailFile')->setFormType(VichImageType::class);
+//        $image = ImageField::new('thumbnail')->setBasePath('/images/thumbnails');
 
         $fields = [
             //IdField::new('id'),
@@ -35,11 +35,11 @@ class FormationCrudController extends AbstractCrudController
             SlugField::new('slug')->setTargetFieldName('title'),
         ];
 
-        if ($pageName == Crud::PAGE_INDEX || $pageName == Crud::PAGE_DETAIL) {
-            $fields[] = $image;
-        } else {
-            $fields[] = $imageFile;
-        }
+//        if ($pageName == Crud::PAGE_INDEX || $pageName == Crud::PAGE_DETAIL) {
+//            $fields[] = $image;
+//        } else {
+//            $fields[] = $imageFile;
+//        }
 
         return $fields;
     }

@@ -20,8 +20,10 @@ class LessonCrudController extends AbstractCrudController
         return [
             //IdField::new('id'),
             TextField::new('title'),
+            AssociationField::new('section'),
             TextEditorField::new('text'),
-            AssociationField::new('section')
+            TextField::new('video'),
+            TextField::new('resources')
         ];
     }
 
