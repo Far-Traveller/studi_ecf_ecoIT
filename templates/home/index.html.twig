@@ -23,7 +23,7 @@
                     <div class="card h-100 text-center">
                         <img loading="lazy" src="{{ asset('images/course-img1.jpg') }}" alt="illustration1"/>
                         <div class="card-body">
-                            <a href="{{ path('app_formation_show', {id: formation.id}) }}" class="h3 card-title">
+                            <a href="{{ path('app_formation_show', {slug: formation.slug}) }}" class="h3 card-title">
                                 {{ formation.title }}
                             </a>
                             <p class="card-text">{{ formation.description }}</p>

@@ -39,7 +39,7 @@ class FormationController extends AbstractController
         ]);
     }
 
-    #[Route('/formations/{id}', name: 'app_formation_show')]
+    #[Route('/formations/{slug}', name: 'app_formation_show')]
     public function show(Formation $formation): Response
     {
         $id_formation = $formation->getId();
@@ -54,11 +54,14 @@ class FormationController extends AbstractController
         ]);
     }
 
-    #[Route('/formations/{id}/lesson/{id_lesson}', name: 'app_lesson_show')]
-    public function showLesson(): Response
+    #[Route('/formations/{slug}/{id_section}/{id}', name: 'app_lesson_show')]
+    public function showLesson(Lesson $lesson): Response
     {
-
+        return $this->json([
+            'title' => $lesson->getTitle(),
+            'video' => $lesson->getVideo(),
+            'text' => $lesson->getText(),
+        ]);
     }
-
 
 }
