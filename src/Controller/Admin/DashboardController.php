@@ -27,7 +27,6 @@ class DashboardController extends AbstractDashboardController
 
         if (!$this->getUser()) {
             return $this->redirectToRoute('app_homepage');
-
         }
 
         $userRole = $this->getUser()->getRoles();
@@ -49,8 +48,7 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::section('Utilisateurs');
+        yield MenuItem::section('Utilisateurs')->setPermission('ROLE_ADMIN');
         yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-user', User::class)->setPermission('ROLE_ADMIN');
         yield MenuItem::section('Formations')->setPermission('ROLE_INSTRUCTOR');
         yield MenuItem::linkToCrud('Formations', 'fas fa-book-open', Formation::class)->setPermission('ROLE_INSTRUCTOR');
