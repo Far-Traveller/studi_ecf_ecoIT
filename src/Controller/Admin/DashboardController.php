@@ -18,13 +18,12 @@ class DashboardController extends AbstractDashboardController
     #[Route('/admin', name: 'admin')]
     public function index(): Response
     {
-
 //         $adminUrlGenerator = $this->container->get(AdminUrlGenerator::class);
 //         return $this->redirect($adminUrlGenerator->setController(UserCrudController::class)->generateUrl());
 
         $adminUrlGenerator = $this->container->get(AdminUrlGenerator::class);
-        $administratorPath = $this->redirect($adminUrlGenerator->setController(UserCrudController::class)->generateUrl());
-        $instructorPath = $this->redirect($adminUrlGenerator->setController(UserCrudController::class)->generateUrl());
+        $administratorPath = $adminUrlGenerator->setController(UserCrudController::class)->generateUrl();
+        $instructorPath = $adminUrlGenerator->setController(UserCrudController::class)->generateUrl();
 
         if (!$this->getUser()) {
             return $this->redirectToRoute('app_homepage');
@@ -40,7 +39,6 @@ class DashboardController extends AbstractDashboardController
         } else {
             return $this->redirectToRoute('app_homepage');
         }
-
     }
 
     public function configureDashboard(): Dashboard
@@ -53,10 +51,10 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::section('Utilisateurs');
-        yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-user', User::class);
-        yield MenuItem::section('Formations');
-        yield MenuItem::linkToCrud('Formations', 'fas fa-user', Formation::class);
-        yield MenuItem::linkToCrud('Sections', 'fas fa-user', Section::class);
-        yield MenuItem::linkToCrud('Lessons', 'fas fa-user', Lesson::class);
+        yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-user', User::class)->setPermission('ROLE_ADMIN');
+        yield MenuItem::section('Formations')->setPermission('ROLE_INSTRUCTOR');
+        yield MenuItem::linkToCrud('Formations', 'fas fa-book-open', Formation::class)->setPermission('ROLE_INSTRUCTOR');
+        yield MenuItem::linkToCrud('Sections', 'fas fa-book-open', Section::class)->setPermission('ROLE_INSTRUCTOR');
+        yield MenuItem::linkToCrud('Lessons', 'fas fa-book-open', Lesson::class)->setPermission('ROLE_INSTRUCTOR');
     }
 }
