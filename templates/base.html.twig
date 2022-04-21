@@ -34,6 +34,9 @@
                             {%  if is_granted('ROLE_LEARNER') %}
                                 <a class="nav-link" href="{{ path('app_learner_profile', {id: app.user.id}) }}">Mon profil</a>
                             {% endif %}
+                            {%  if is_granted('ROLE_ADMIN') or is_granted('ROLE_INSTRUCTOR') %}
+                                <a class="nav-link" href="{{ path('admin') }}">Admin</a>
+                            {% endif %}
                             {%  if is_granted('IS_AUTHENTICATED_FULLY') %}
                                 <a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
                             {% else %}
