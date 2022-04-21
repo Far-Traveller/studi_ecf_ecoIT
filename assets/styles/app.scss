@@ -135,6 +135,14 @@ form button {
   text-align: left;
 }
 
+/**** Profile Learner ****/
+.profile-info, .profile-prog {
+  padding: 15px 20px;
+}
+.profile-info p {
+  padding-left: 25px;
+}
+
 /**** footer ****/
 footer div{
   text-align: center;
@@ -154,15 +162,24 @@ footer div p{
     font-size: 3em;
   }
   .welcome-title {
-    margin: 0 200px;
+    margin: 0 20%;
   }
   .welcome-text {
     margin: 50px 200px;
   }
 
-/**** Formation pages ****/
+  /**** Formation pages ****/
   #collapseFormation {
     border-bottom: none;
     border-right: 2px solid $dark-green;
   }
+
+  /**** Profile Learner ****/
+  .profile-info, .profile-prog {
+    padding: 20px 20%;
+  }
+  .profile-info p {
+    padding-left: 25px;
+  }
+
 }

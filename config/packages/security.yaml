@@ -43,6 +43,7 @@ security:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
         - { path: ^/formations/[0-9], roles: ROLE_USER }
+        - { path: ^/profil, roles: ROLE_LEARNER }
 
 when@test:
     security:
