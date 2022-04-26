@@ -15,7 +15,7 @@ $ git clone https://github.com/Far-Traveller/studi_ecf_ecoIT.git
 $ cd studi_ecf_ecoIT/
 ```
 ```
-$ npm start
+$ npm install
 ```
 ```
 $ composer install
